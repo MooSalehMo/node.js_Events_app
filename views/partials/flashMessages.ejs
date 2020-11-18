@@ -1,0 +1,33 @@
+<div class="col-12  text-center">
+  <% if (locals.errors) { %> 
+    <% errors.forEach( (err) => { %>
+      <div class="alert alert-danger col-md-6 ml-auto mr-auto">
+        <%= err.msg%> 
+      </div>
+    <% }) %>  
+  <% } %> 
+</div>
+
+<div class="col-12  text-center">
+  <% if (locals.message && message != "") { %> 
+      <div class="alert alert-success col-md-6 ml-auto mr-auto">
+        <%= message%> 
+      </div>
+  <% } %> 
+</div>
+
+<div class="col-12  text-center">
+  <% if (locals.error && error != "") { %> 
+      <div class="alert alert-danger col-md-6 ml-auto mr-auto">
+        <%= error%> 
+      </div>
+  <% } %> 
+</div>
+
+<div class="col-12  text-center">
+  <% if (locals.success && success != "") { %> 
+      <div class="alert alert-success col-md-6 ml-auto mr-auto">
+        <%= success%> 
+      </div>
+  <% } %> 
+</div>

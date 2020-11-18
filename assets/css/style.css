@@ -1,0 +1,30 @@
+.navbar-brand {
+  font-size: 1.6rem;
+}
+@media (min-width: 768px) {
+  nav .container ul li {
+    margin-right: 1.2rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  
+  nav .container .navbar-toggler {
+    outline: none;
+    border: none;
+  }
+  nav ul > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px; 
+  border-radius: 50%;
+  display: block;
+  background-size: cover;
+}

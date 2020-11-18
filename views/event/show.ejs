@@ -1,0 +1,31 @@
+<%- include('../partials/header') %> 
+<%- include('../partials/navbar') %>
+<div class="container">
+
+  <div class="col-md-6  ml-auto mr-auto mt-3">
+    <div class="card bg-dark text-light">
+      <div class="card-body">
+        <h5 class="card-title"><%= event.title%></h5>
+        <hr class="bg-light">
+        <p class="card-text"><%= event.description%></p>
+        <p><%= event.location%></p>
+        <p class="col-12 pl-0">
+          <span class="badge-secondary badge font-weight-light"><%= event.date.toDateString()%></span>
+        </p>
+
+        <% if ( (user) && (user.id == event.user_id) ) { %> 
+          <button  
+            onclick="deleteEvent()" 
+            id="eventBtn" 
+            data-id="<%= event.id  %> " 
+            class="btn btn-danger pull-right ml-2">Delete
+          </button>
+          <a href="<%= '/events/edit/' + event.id %> " class="btn btn-primary pull-right">Edit</a>
+        <% } %> 
+      </div>
+    </div>
+  </div>
+
+</div>
+<%- include('../partials/footer') %> 
+  

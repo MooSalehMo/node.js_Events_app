@@ -1,0 +1,50 @@
+<%- include('../partials/header') -%>
+<%- include('../partials/navbar') -%>
+<div class="container pb-2">
+
+  <div class="row mt-3 mb-1">
+   <%- include('../partials/flashMessages.ejs') %> 
+
+    <% chunk.forEach( event => {%>
+      <div class="col-12">
+        <div class="col col-md-8 ml-auto mr-auto mb-2">
+          <div class="card  bg-dark text-light">
+            <div class="card-body">
+              <h5 class="card-title"><%= event.title%></h5>
+              <hr style="height: 0px !important; border-bottom: 1px solid#fff;">
+              <p class="card-text"><%= event.description%></p>
+              <p><%= event.location%></p>
+              <a href="<%= '/events/show/' + event._id%>" title="<%= event.title%>" class="btn btn-primary">Show More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%})%>
+  </div>
+
+  <div class="row">
+    <div class="col-12 mt-3 mb-4">
+      <nav aria-label="...">
+        <ul class="pagination pagination justify-content-center">
+          <% for (var i=1; i <= Math.ceil(total/5); i++) { %> 
+
+            <% if (pageNo = i) { %> 
+              <li class="page-item active" style="margin-left: 3px;" aria-current="page">
+                <a class="page-link" href="<%= '/events/' + i %> "><%= i %></a>
+              </li>
+            <% } else { %> 
+              <li class="page-item active">
+                <a class="page-link" href="<%= '/events/' + i %> "><%= i %></a>
+              </li>
+            <% } %> 
+
+          <% } %> 
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+</div>
+
+
+<%- include('../partials/footer') -%>
